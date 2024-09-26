@@ -6,10 +6,79 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sprite Demo</title>
   <script src="./src/js/sprite.js"></script>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      width: 100%;
+      height: 100vh;
+      padding: 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    h1 {
+      font-size: 24px;
+      margin-bottom: 40px;
+    }
+
+    h2 {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    .wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .wrapper+h2 {
+      margin-top: 40px;
+    }
+
+    .wrapper div {
+      width: 32px;
+      height: 32px;
+      border: 1px solid #ddd;
+      border-radius: 3px;
+    }
+  </style>
 </head>
 
 <body>
+  <h1>Sprite.js</h1>
+  <h2>Static Icons</h2>
+  <div class="wrapper">
+    <div class="icon_1"></div>
+    <div class="icon_2"></div>
+    <div class="icon_3"></div>
+    <div class="icon_4"></div>
+    <div class="icon_5"></div>
+    <div class="icon_6"></div>
+  </div>
 
+  <h2>Animation Sprite</h2>
+  <div class="wrapper">
+    <div class="animtion_1"></div>
+    <div class="animtion_2"></div>
+    <div class="animtion_3"></div>
+    <div class="animtion_4"></div>
+  </div>
+
+  <script>
+    new Sprite('./src/images/sample_iconset.webp', [4, 8], {
+      initialFrame: 0,
+      targetClass: '.icon_1',
+    });
+  </script>
 </body>
 
 </html>
