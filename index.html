@@ -6,7 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sprite Demo</title>
   <script src="./src/js/sprite.js"></script>
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css"> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
   <link rel="stylesheet" href="./src/css/style.css">
+
+  <script>
+    hljs.highlightAll();
+  </script>
 </head>
 
 <body>
@@ -18,6 +24,11 @@
     </div>
     <div class="right">
       <div class="row">
+        <div class="icon_item" sprite="iconset" spriteIdx="0"></div>
+        <div class="icon_item md" sprite="iconset" spriteIdx="0"></div>
+        <div class="icon_item lg" sprite="iconset" spriteIdx="0"></div>
+      </div>
+      <div class="row">
 
         <!-- render 매서드로 자동 생성 -->
         <div class="icon_item" sprite="iconset" spriteIdx="0"></div>
@@ -26,24 +37,57 @@
         <div class="icon_item" sprite="iconset" spriteIdx="3"></div>
         <div class="icon_item" sprite="iconset" spriteIdx="4"></div>
         <div class="icon_item" sprite="iconset" spriteIdx="5"></div>
+        <div class="icon_item" sprite="iconset" spriteIdx="6"></div>
+        <div class="icon_item" sprite="iconset" spriteIdx="7"></div>
+      </div>
 
-        <!-- 수동 생성 -->
-        <div class="icon_item icon_7"></div>
-        <div class="icon_item icon_8"></div>
-        <div class="icon_item icon_9"></div>
-        <div class="icon_item icon_10"></div>
-      </div>
       <div class="row">
-        <div class="icon_item md icon_11"></div>
-        <div class="icon_item md icon_12"></div>
-        <div class="icon_item md icon_13"></div>
-        <div class="icon_item md icon_14"></div>
-      </div>
-      <div class="row">
-        <div class="icon_item lg icon_15"></div>
-        <div class="icon_item lg icon_16"></div>
+        <div class="icon_item" sprite="iconset" spriteIdx="8"></div>
+        <div class="icon_item" sprite="iconset" spriteIdx="9"></div>
+        <div class="icon_item" sprite="iconset" spriteIdx="10"></div>
+        <div class="icon_item" sprite="iconset" spriteIdx="11"></div>
+        <div class="icon_item" sprite="iconset" spriteIdx="12"></div>
+        <div class="icon_item" sprite="iconset" spriteIdx="13"></div>
+        <div class="icon_item" sprite="iconset" spriteIdx="14"></div>
+        <div class="icon_item" sprite="iconset" spriteIdx="15"></div>
       </div>
     </div>
+  </div>
+  <div class="row code_block">
+    <pre class="theme-atom-one-dark"><code class="language-html">
+  &#x3C;div class=&#x22;icon_item&#x22; sprite=&#x22;iconset&#x22; spriteIdx=&#x22;0&#x22;&#x3E;&#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;icon_item md&#x22; sprite=&#x22;iconset&#x22; spriteIdx=&#x22;0&#x22;&#x3E;&#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;icon_item lg&#x22; sprite=&#x22;iconset&#x22; spriteIdx=&#x22;0&#x22;&#x3E;&#x3C;/div&#x3E;
+
+  &#x3C;div class=&#x22;icon_item&#x22; sprite=&#x22;iconset&#x22; spriteIdx=&#x22;0&#x22;&#x3E;&#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;icon_item&#x22; sprite=&#x22;iconset&#x22; spriteIdx=&#x22;1&#x22;&#x3E;&#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;icon_item&#x22; sprite=&#x22;iconset&#x22; spriteIdx=&#x22;2&#x22;&#x3E;&#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;icon_item&#x22; sprite=&#x22;iconset&#x22; spriteIdx=&#x22;3&#x22;&#x3E;&#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;icon_item&#x22; sprite=&#x22;iconset&#x22; spriteIdx=&#x22;4&#x22;&#x3E;&#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;icon_item&#x22; sprite=&#x22;iconset&#x22; spriteIdx=&#x22;5&#x22;&#x3E;&#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;icon_item&#x22; sprite=&#x22;iconset&#x22; spriteIdx=&#x22;6&#x22;&#x3E;&#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;icon_item&#x22; sprite=&#x22;iconset&#x22; spriteIdx=&#x22;7&#x22;&#x3E;&#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;icon_item&#x22; sprite=&#x22;iconset&#x22; spriteIdx=&#x22;8&#x22;&#x3E;&#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;icon_item&#x22; sprite=&#x22;iconset&#x22; spriteIdx=&#x22;9&#x22;&#x3E;&#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;icon_item&#x22; sprite=&#x22;iconset&#x22; spriteIdx=&#x22;10&#x22;&#x3E;&#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;icon_item&#x22; sprite=&#x22;iconset&#x22; spriteIdx=&#x22;11&#x22;&#x3E;&#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;icon_item&#x22; sprite=&#x22;iconset&#x22; spriteIdx=&#x22;12&#x22;&#x3E;&#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;icon_item&#x22; sprite=&#x22;iconset&#x22; spriteIdx=&#x22;13&#x22;&#x3E;&#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;icon_item&#x22; sprite=&#x22;iconset&#x22; spriteIdx=&#x22;14&#x22;&#x3E;&#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;icon_item&#x22; sprite=&#x22;iconset&#x22; spriteIdx=&#x22;15&#x22;&#x3E;&#x3C;/div&#x3E;
+    </code></pre>
+  </div>
+  <div class="row code_block">
+    <pre class="theme-atom-one-dark"><code class="language-js">
+  const iconset = new Sprite('./src/images/sample_iconset.webp', [2, 8], {
+    id: 'iconset',
+    offset: [87, 227, 86, 227],
+    initialFrame: 0,
+  });
+
+  iconset.render();
+
+</code></pre>
   </div>
 
   <h2>Animation Sprite</h2>
@@ -58,18 +102,19 @@
           <span>basic</span>
         </div>
         <div class="anime_item">
-          <div class="animtion_4"></div>
+          <div class="animtion_2"></div>
           <span>variable speed</span>
         </div>
         <div class="anime_item">
-          <div class="animtion_2"></div>
-          <span>on mouse over</span>
+          <div class="animtion_3"></div>
+          <span>hover play</span>
         </div>
         <div class="anime_item">
-          <div class="animtion_3"></div>
-          <span>on click</span>
+          <div class="animtion_4"></div>
+          <span>click play & stop</span>
         </div>
       </div>
+
       <div class="row">
         <div class="anime_item">
           <div class="animtion_5"></div>
@@ -91,6 +136,38 @@
     </div>
   </div>
 
+  <div class="row code_block">
+    <pre class="theme-atom-one-dark"><code class="language-html">
+  &#x3C;div class=&#x22;animtion_1&#x22;&#x3E;&#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;animtion_2&#x22;&#x3E;&#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;animtion_3&#x22;&#x3E;&#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;animtion_4&#x22;&#x3E;&#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;animtion_5&#x22;&#x3E;&#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;animtion_6&#x22;&#x3E;&#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;animtion_7&#x22;&#x3E;&#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;animtion_8&#x22;&#x3E;&#x3C;/div&#x3E;
+    </code></pre>
+  </div>
+  <div class="row code_block">
+    <pre class="theme-atom-one-dark"><code class="language-js">
+  const animation = new Sprite('./src/images/sample_animation.jpg', [2, 4], {
+    initialFrame: 0,
+    frame: 12,
+    loop: true,
+  });
+
+  animation.create('.animtion_1', 0).play();
+  animation.create('.animtion_2', 0).setSpeed(4).play();
+  animation.create('.animtion_3', 0).onPlay();
+  animation.create('.animtion_4', 0).onClick();
+  animation.create('.animtion_5', 0).play(0, 1);
+  animation.create('.animtion_6', 0).play(2, 3);
+  animation.create('.animtion_7', 0).play(4, 5);
+  animation.create('.animtion_8', 0).play(6, 7);
+
+</code></pre>
+  </div>
+
   <script>
     const iconset = new Sprite('./src/images/sample_iconset.webp', [2, 8], {
       id: 'iconset',
@@ -100,88 +177,20 @@
 
     iconset.render();
 
-    iconset.create('.icon_7', 6);
-    iconset.create('.icon_8', 7);
-    iconset.create('.icon_9', 8);
-    iconset.create('.icon_10', 9);
-    iconset.create('.icon_11', 10);
-    iconset.create('.icon_12', 11);
-    iconset.create('.icon_13', 12);
-    iconset.create('.icon_14', 13);
-    iconset.create('.icon_15', 14);
-    iconset.create('.icon_16', 15);
-
     const animation = new Sprite('./src/images/sample_animation.jpg', [2, 4], {
       initialFrame: 0,
       frame: 12,
       loop: true,
     });
 
-    animation.create('.animtion_1', 0);
-    animation.play();
-
-    const animation2 = new Sprite('./src/images/sample_animation.jpg', [2, 4], {
-      initialFrame: 0,
-      frame: 12,
-      loop: true,
-    });
-    animation2.create('.animtion_2', 0);
-
-    animation2.onPlay();
-
-    const animation3 = new Sprite('./src/images/sample_animation.jpg', [2, 4], {
-      initialFrame: 0,
-      frame: 12,
-      loop: true,
-    });
-    animation3.create('.animtion_3', 0);
-
-    animation3.onClick();
-
-    const animation4 = new Sprite('./src/images/sample_animation.jpg', [2, 4], {
-      initialFrame: 0,
-      frame: 4,
-      loop: true,
-    });
-    animation4.create('.animtion_4', 0);
-
-    animation4.play();
-
-    const animation5 = new Sprite('./src/images/sample_animation.jpg', [2, 4], {
-      initialFrame: 0,
-      frame: 12,
-      loop: true,
-    });
-    animation5.create('.animtion_5', 0);
-
-    animation5.play(0, 1);
-
-    const animation6 = new Sprite('./src/images/sample_animation.jpg', [2, 4], {
-      initialFrame: 0,
-      frame: 12,
-      loop: true,
-    });
-    animation6.create('.animtion_6', 0);
-
-    animation6.play(2, 3);
-
-    const animation7 = new Sprite('./src/images/sample_animation.jpg', [2, 4], {
-      initialFrame: 0,
-      frame: 12,
-      loop: true,
-    });
-    animation7.create('.animtion_7', 0);
-
-    animation7.play(4, 5);
-
-    const animation8 = new Sprite('./src/images/sample_animation.jpg', [2, 4], {
-      initialFrame: 0,
-      frame: 12,
-      loop: true,
-    });
-    animation8.create('.animtion_8', 0);
-
-    animation8.play(6, 7);
+    animation.create('.animtion_1', 0).play();
+    animation.create('.animtion_2', 0).setSpeed(4).play();
+    animation.create('.animtion_3', 0).onPlay();
+    animation.create('.animtion_4', 0).onClick();
+    animation.create('.animtion_5', 0).play(0, 1);
+    animation.create('.animtion_6', 0).play(2, 3);
+    animation.create('.animtion_7', 0).play(4, 5);
+    animation.create('.animtion_8', 0).play(6, 7);
   </script>
 </body>
 
