@@ -23,9 +23,12 @@ class Sprite {
                 (this.img.height - (this.offset[0] + this.offset[2])) / row,
             ];
 
-            console.log(this.imageSize)
             this.init(config.initialFrame);
         });
+    }
+
+    create(className){
+
     }
 
     increaseSpeed() {
