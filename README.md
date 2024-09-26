@@ -4,7 +4,7 @@
 html 태그에 attribute를 추가하여 간편하게 스프라이트 아이콘을 표시하거나,  
 개별 애니메이션을 재생할 수 있습니다.
 
-[데모 페이지](https://mooky1007.github.io/sprite.js/)
+<a href="https://mooky1007.github.io/sprite.js" target="_blank">데모 페이지</a>
 
 ## 기능
 -   **수동 스프라이트 관리**: `create`를 사용하여 스프라이트 아이템 객체를 생성할 수 있습니다.
