@@ -37,18 +37,21 @@
     .wrapper {
       display: flex;
       flex-wrap: wrap;
+      justify-content: center;
       gap: 10px;
+      max-width: 1000px;
     }
 
     .wrapper+h2 {
       margin-top: 40px;
     }
 
-    .wrapper div {
-      width: 32px;
-      height: 32px;
+    .wrapper>div {
+      width: 93.25px;
+      height: 100px;
       border: 1px solid #ddd;
       border-radius: 3px;
+      overflow: hidden;
     }
   </style>
 </head>
@@ -63,6 +66,16 @@
     <div class="icon_4"></div>
     <div class="icon_5"></div>
     <div class="icon_6"></div>
+    <div class="icon_7"></div>
+    <div class="icon_8"></div>
+    <div class="icon_9"></div>
+    <div class="icon_10"></div>
+    <div class="icon_11"></div>
+    <div class="icon_12"></div>
+    <div class="icon_13"></div>
+    <div class="icon_14"></div>
+    <div class="icon_15"></div>
+    <div class="icon_16"></div>
   </div>
 
   <h2>Animation Sprite</h2>
@@ -74,9 +87,100 @@
   </div>
 
   <script>
-    new Sprite('./src/images/sample_iconset.webp', [4, 8], {
+    new Sprite('./src/images/sample_iconset.webp', [2, 8], {
+      offset: [87, 227, 86, 227],
       initialFrame: 0,
       targetClass: '.icon_1',
+    });
+
+    new Sprite('./src/images/sample_iconset.webp', [2, 8], {
+      offset: [87, 227, 86, 227],
+      initialFrame: 1,
+      targetClass: '.icon_2',
+    });
+
+    new Sprite('./src/images/sample_iconset.webp', [2, 8], {
+      offset: [87, 227, 86, 227],
+      initialFrame: 2,
+      targetClass: '.icon_3',
+    });
+
+    new Sprite('./src/images/sample_iconset.webp', [2, 8], {
+      offset: [87, 227, 86, 227],
+      initialFrame: 3,
+      targetClass: '.icon_4',
+    });
+
+    new Sprite('./src/images/sample_iconset.webp', [2, 8], {
+      offset: [87, 227, 86, 227],
+      initialFrame: 4,
+      targetClass: '.icon_5',
+    });
+
+    new Sprite('./src/images/sample_iconset.webp', [2, 8], {
+      offset: [87, 227, 86, 227],
+      initialFrame: 5,
+      targetClass: '.icon_6',
+    });
+
+    new Sprite('./src/images/sample_iconset.webp', [2, 8], {
+      offset: [87, 227, 86, 227],
+      initialFrame: 6,
+      targetClass: '.icon_7',
+    });
+
+    new Sprite('./src/images/sample_iconset.webp', [2, 8], {
+      offset: [87, 227, 86, 227],
+      initialFrame: 7,
+      targetClass: '.icon_8',
+    });
+
+    new Sprite('./src/images/sample_iconset.webp', [2, 8], {
+      offset: [87, 227, 86, 227],
+      initialFrame: 8,
+      targetClass: '.icon_9',
+    });
+
+    new Sprite('./src/images/sample_iconset.webp', [2, 8], {
+      offset: [87, 227, 86, 227],
+      initialFrame: 9,
+      targetClass: '.icon_10',
+    });
+
+    new Sprite('./src/images/sample_iconset.webp', [2, 8], {
+      offset: [87, 227, 86, 227],
+      initialFrame: 10,
+      targetClass: '.icon_11',
+    });
+
+    new Sprite('./src/images/sample_iconset.webp', [2, 8], {
+      offset: [87, 227, 86, 227],
+      initialFrame: 11,
+      targetClass: '.icon_12',
+    });
+
+    new Sprite('./src/images/sample_iconset.webp', [2, 8], {
+      offset: [87, 227, 86, 227],
+      initialFrame: 12,
+      targetClass: '.icon_13',
+    });
+
+    new Sprite('./src/images/sample_iconset.webp', [2, 8], {
+      offset: [87, 227, 86, 227],
+      initialFrame: 13,
+      targetClass: '.icon_14',
+    });
+
+    new Sprite('./src/images/sample_iconset.webp', [2, 8], {
+      offset: [87, 227, 86, 227],
+      initialFrame: 14,
+      targetClass: '.icon_15',
+    });
+
+    new Sprite('./src/images/sample_iconset.webp', [2, 8], {
+      offset: [87, 227, 86, 227],
+      initialFrame: 15,
+      targetClass: '.icon_16',
     });
   </script>
 </body>

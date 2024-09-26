@@ -2,6 +2,7 @@ class Sprite {
     constructor(src, [row, col], config = {}) {
         this.frame = config.frame || 30;
         this.loop = config.loop || false;
+        this.offset = config.offset || [0, 0, 0, 0];
         this.targetClass = config.targetClass;
 
         this.dev = config.dev || false;
@@ -17,7 +18,12 @@ class Sprite {
 
             this.img.src = src;
         }).then(() => {
-            this.imageSize = [this.img.width / col, this.img.height / row];
+            this.imageSize = [
+                (this.img.width - (this.offset[1] + this.offset[3])) / col,
+                (this.img.height - (this.offset[0] + this.offset[2])) / row,
+            ];
+
+            console.log(this.imageSize)
             this.init(config.initialFrame);
         });
     }
@@ -44,14 +50,14 @@ class Sprite {
 
     // 이미지가 로드되면 dom을 생성하고, 초기 프레임을 렌더링한다.
     init(initialFrame = 0) {
-        const imgDom = document.createElement('span');
+        const imgDom = document.createElement('div');
         const [width, height] = this.imageSize;
 
         imgDom.style.cssText = `
           width: ${width}px;
           height: ${height}px;
           background-image: url(${this.img.src});
-          background-position: 0 0;
+          background-position: ${this.offset[0]}px ${this.offset[3]}px;
           background-size: ${this.img.width}px ${this.img.height}px;
           background-repeat: no-repeat;
         `;
@@ -70,8 +76,8 @@ class Sprite {
     async setIdx(idx) {
         await this.imageLoaded;
 
-        const left = this.imageSize[0] * Math.floor(idx % this.col) * -1;
-        const top = this.imageSize[1] * Math.floor(idx / this.col) * -1;
+        const left = this.imageSize[0] * Math.floor(idx % this.col) * -1 - this.offset[3];
+        const top = this.imageSize[1] * Math.floor(idx / this.col) * -1 - this.offset[0];
 
         this.imgDom.style.backgroundPosition = `${left}px ${top}px`;
     }
