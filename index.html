@@ -18,12 +18,16 @@
     </div>
     <div class="right">
       <div class="row">
-        <div class="icon_item icon_1"></div>
-        <div class="icon_item icon_2"></div>
-        <div class="icon_item icon_3"></div>
-        <div class="icon_item icon_4"></div>
-        <div class="icon_item icon_5"></div>
-        <div class="icon_item icon_6"></div>
+
+        <!-- render 매서드로 자동 생성 -->
+        <div class="icon_item" sprite="iconset" spriteIdx="0"></div>
+        <div class="icon_item" sprite="iconset" spriteIdx="1"></div>
+        <div class="icon_item" sprite="iconset" spriteIdx="2"></div>
+        <div class="icon_item" sprite="iconset" spriteIdx="3"></div>
+        <div class="icon_item" sprite="iconset" spriteIdx="4"></div>
+        <div class="icon_item" sprite="iconset" spriteIdx="5"></div>
+
+        <!-- 수동 생성 -->
         <div class="icon_item icon_7"></div>
         <div class="icon_item icon_8"></div>
         <div class="icon_item icon_9"></div>
@@ -89,16 +93,13 @@
 
   <script>
     const iconset = new Sprite('./src/images/sample_iconset.webp', [2, 8], {
+      id: 'iconset',
       offset: [87, 227, 86, 227],
       initialFrame: 0,
     });
 
-    iconset.create('.icon_1', 0);
-    iconset.create('.icon_2', 1);
-    iconset.create('.icon_3', 2);
-    iconset.create('.icon_4', 3);
-    iconset.create('.icon_5', 4);
-    iconset.create('.icon_6', 5);
+    iconset.render();
+
     iconset.create('.icon_7', 6);
     iconset.create('.icon_8', 7);
     iconset.create('.icon_9', 8);

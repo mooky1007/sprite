@@ -1,5 +1,6 @@
 class Sprite {
     constructor(src, [row, col], config = {}) {
+        this.id = config.id || '';
         this.frame = config.frame || 30;
         this.loop = config.loop || false;
         this.offset = config.offset || [0, 0, 0, 0];
@@ -26,19 +27,31 @@ class Sprite {
         });
     }
 
-    async create(className, idx) {
+    render() {
+        const items = document.querySelectorAll(`[sprite="${this.id}"]`);
+        items.forEach((item) => {
+            this.create(item, item.getAttribute('spriteidx') || 0);
+        });
+    }
+
+    async create(target, idx) {
         await this.imageLoaded;
 
-        const targetDom = document.querySelector(className);
+        let targetDom;
+        if (typeof target === 'string') {
+            targetDom = document.querySelector(target);
+        } else {
+            targetDom = target;
+        }
 
         const imgDom = document.createElement('div');
         const [width, height] = this.imageSize;
 
-        const ratio = targetDom.clientWidth / width;
+        const ratio = targetDom.offsetWidth / width;
 
         imgDom.style.cssText = `
-          width: ${targetDom.clientWidth}px;
-          height: ${targetDom.clientHeight}px;
+          width: ${targetDom.offsetWidth}px;
+          height: ${targetDom.offsetHeight}px;
           background-image: url(${this.img.src});
           background-size: ${this.img.width * ratio}px ${this.img.height * ratio}px;
           background-repeat: no-repeat;
@@ -99,7 +112,7 @@ class Sprite {
         await this.imageLoaded;
 
         const [width, height] = this.imageSize;
-        const ratio = this.targetDom.clientWidth / width;
+        const ratio = this.targetDom.offsetWidth / width;
 
         const left = (width * Math.floor(idx % this.col) * -1 - this.offset[3]) * ratio;
         const top = (height * Math.floor(idx / this.col) * -1 - this.offset[0]) * ratio;
