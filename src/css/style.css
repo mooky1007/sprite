@@ -19,12 +19,14 @@ h1 {
     width: 100%;
     font-size: 24px;
     margin-bottom: 40px;
+    max-width: 880px;
 }
 
 h2 {
     width: 100%;
     font-size: 18px;
     margin-bottom: 20px;
+    max-width: 880px;
 }
 
 .wrapper {
@@ -42,6 +44,7 @@ h2 {
     width: 100%;
     border-radius: 10px;
     overflow: hidden;
+    max-width: 880px;
 }
 
 .code_block + .code_block {
