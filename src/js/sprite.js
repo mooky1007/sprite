@@ -110,10 +110,9 @@ class SpriteItem {
     // 입력받은 idx의 프레임으로 이미지를 변경한다.
     async setIdx(idx) {
         this.idx = idx;
-        const { imageLoaded, imageSize, offset, col } = this.parent;
-        await imageLoaded;
+        const { imageSize, offset, col } = this.parent;
 
-        const [width, height] = imageSize;
+        const [width, height] = imageSize || [0, 0];
         const ratio = this.targetDom.offsetWidth / width;
 
         const left = (width * Math.floor(idx % col) * -1 - offset[3]) * ratio;
