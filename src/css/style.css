@@ -46,6 +46,7 @@ h2 {
     border-radius: 10px;
     overflow: hidden;
     max-width: 880px;
+    font-size: 12px;
 }
 
 .code_block + .code_block {
@@ -112,11 +113,11 @@ h2 {
     justify-content: center;
     align-items: center;
     gap: 5px;
-    font-size: 12px;
+    font-size: 10px;
 }
 
 .anime_item > div {
-    width: 100px;
+    width: 94px;
     height: 120px;
     border: 1px solid #444;
     border-radius: 3px;
@@ -149,7 +150,7 @@ hue-6-2: #e6c07b
 */
 
 .hljs {
-  line-height: 1.4;
+    line-height: 1.4;
     display: block;
     overflow-x: auto;
     padding: 0.5em;
