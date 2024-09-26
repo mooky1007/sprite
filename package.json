@@ -1,0 +1,13 @@
+{
+    "type": "module",
+    "dependencies": {
+        "@babel/preset-env": "^7.25.4",
+        "babelify": "^10.0.0",
+        "browserify": "^17.0.0",
+        "gulp": "^5.0.0",
+        "gulp-javascript-obfuscator": "^1.1.6",
+        "vinyl-buffer": "^1.0.1",
+        "vinyl-source-stream": "^2.0.0",
+        "vinyl-sourcemaps-apply": "^0.2.1"
+    }
+}
