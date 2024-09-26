@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Pretendard';
 }
 
 body {
@@ -81,7 +82,6 @@ h2 {
 }
 
 .wrapper .right {
-    overflow: auto;
     border-radius: 0;
     display: flex;
     flex-direction: column;
