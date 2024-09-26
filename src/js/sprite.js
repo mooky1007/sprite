@@ -3,7 +3,6 @@ class Sprite {
         this.frame = config.frame || 30;
         this.loop = config.loop || false;
         this.offset = config.offset || [0, 0, 0, 0];
-        this.targetClass = config.targetClass;
 
         this.dev = config.dev || false;
 
@@ -27,8 +26,35 @@ class Sprite {
         });
     }
 
-    create(className){
+    async create(className, idx) {
+        await this.imageLoaded;
 
+        const targetDom = document.querySelector(className);
+
+        const imgDom = document.createElement('div');
+        const [width, height] = this.imageSize;
+
+        const ratio = targetDom.clientWidth / width;
+
+        imgDom.style.cssText = `
+          width: ${targetDom.clientWidth}px;
+          height: ${targetDom.clientHeight}px;
+          background-image: url(${this.img.src});
+          background-size: ${this.img.width * ratio}px ${this.img.height * ratio}px;
+          background-repeat: no-repeat;
+        `;
+
+        const left = (width * Math.floor(idx % this.col) * -1 - this.offset[3]) * ratio;
+        const top = (height * Math.floor(idx / this.col) * -1 - this.offset[0]) * ratio;
+
+        imgDom.style.backgroundPosition = `${left}px ${top}px`;
+
+        targetDom.append(imgDom);
+
+        this.targetDom = targetDom;
+        this.imgDom = imgDom;
+
+        return this;
     }
 
     increaseSpeed() {
@@ -66,21 +92,17 @@ class Sprite {
         `;
 
         this.imgDom = imgDom;
-
-        if (this.targetClass) {
-            document.querySelector(this.targetClass).append(imgDom);
-        } else {
-            document.body.append(imgDom);
-        }
-        this.setIdx(initialFrame);
     }
 
     // 입력받은 idx의 프레임으로 이미지를 변경한다.
     async setIdx(idx) {
         await this.imageLoaded;
 
-        const left = this.imageSize[0] * Math.floor(idx % this.col) * -1 - this.offset[3];
-        const top = this.imageSize[1] * Math.floor(idx / this.col) * -1 - this.offset[0];
+        const [width, height] = this.imageSize;
+        const ratio = this.targetDom.clientWidth / width;
+
+        const left = (width * Math.floor(idx % this.col) * -1 - this.offset[3]) * ratio;
+        const top = (height * Math.floor(idx / this.col) * -1 - this.offset[0]) * ratio;
 
         this.imgDom.style.backgroundPosition = `${left}px ${top}px`;
     }
@@ -128,10 +150,13 @@ class Sprite {
 
     async onPlay() {
         await this.imageLoaded;
+        this.targetDom.addEventListener('mouseenter', () => this.play());
+        this.targetDom.addEventListener('mouseleave', () => this.stop());
+    }
 
-        document.querySelector(this.targetClass).addEventListener('mouseenter', () => this.play());
-        document.querySelector(this.targetClass).addEventListener('mouseleave', () => this.stop());
-        document.querySelector(this.targetClass).addEventListener('click', () => this.increaseSpeed());
+    async onClick() {
+        await this.imageLoaded;
+        this.targetDom.addEventListener('click', () => (this.isPlaying ? this.stop() : this.play()));
     }
 
     // 멈춰져있던 animation을 재생 시킨다.

@@ -53,6 +53,29 @@
       border-radius: 3px;
       overflow: hidden;
     }
+
+    .anime>div {
+      width: auto;
+      height: auto;
+      border: none;
+      border-radius: none;
+      overflow: auto;
+      text-align: center;
+      font-size: 12px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .anime>div>div {
+      width: 80px;
+      height: 80px;
+      border: 1px solid #ddd;
+      border-radius: 3px;
+      overflow: hidden;
+    }
   </style>
 </head>
 
@@ -79,109 +102,70 @@
   </div>
 
   <h2>Animation Sprite</h2>
-  <div class="wrapper">
-    <div class="animtion_1"></div>
-    <div class="animtion_2"></div>
-    <div class="animtion_3"></div>
-    <div class="animtion_4"></div>
+  <div class="wrapper anime">
+    <div class="anime_item">
+      <div class="animtion_1"></div>
+      <span>basic</span>
+    </div>
+    <div class="anime_item">
+      <div class="animtion_2"></div>
+      <span>on mouse over</span>
+    </div>
+    <div class="anime_item">
+      <div class="animtion_3"></div>
+      <span>on click</span>
+    </div>
   </div>
 
   <script>
-    new Sprite('./src/images/sample_iconset.webp', [2, 8], {
+    const iconset = new Sprite('./src/images/sample_iconset.webp', [2, 8], {
       offset: [87, 227, 86, 227],
       initialFrame: 0,
-      targetClass: '.icon_1',
     });
 
-    new Sprite('./src/images/sample_iconset.webp', [2, 8], {
-      offset: [87, 227, 86, 227],
-      initialFrame: 1,
-      targetClass: '.icon_2',
+    iconset.create('.icon_1', 0);
+    iconset.create('.icon_2', 1);
+    iconset.create('.icon_3', 2);
+    iconset.create('.icon_4', 3);
+    iconset.create('.icon_5', 4);
+    iconset.create('.icon_6', 5);
+    iconset.create('.icon_7', 6);
+    iconset.create('.icon_8', 7);
+    iconset.create('.icon_9', 8);
+    iconset.create('.icon_10', 9);
+    iconset.create('.icon_11', 10);
+    iconset.create('.icon_12', 11);
+    iconset.create('.icon_13', 12);
+    iconset.create('.icon_14', 13);
+    iconset.create('.icon_15', 14);
+    iconset.create('.icon_16', 15);
+
+    const animation = new Sprite('./src/images/sample_animation.jpg', [2, 4], {
+      initialFrame: 0,
+      frame: 12,
+      loop: true,
     });
 
-    new Sprite('./src/images/sample_iconset.webp', [2, 8], {
-      offset: [87, 227, 86, 227],
-      initialFrame: 2,
-      targetClass: '.icon_3',
-    });
+    animation.create('.animtion_1', 0);
+    animation.play();
 
-    new Sprite('./src/images/sample_iconset.webp', [2, 8], {
-      offset: [87, 227, 86, 227],
-      initialFrame: 3,
-      targetClass: '.icon_4',
+    const animation2 = new Sprite('./src/images/sample_animation.jpg', [2, 4], {
+      initialFrame: 0,
+      frame: 12,
+      loop: true,
     });
+    animation2.create('.animtion_2', 0);
 
-    new Sprite('./src/images/sample_iconset.webp', [2, 8], {
-      offset: [87, 227, 86, 227],
-      initialFrame: 4,
-      targetClass: '.icon_5',
-    });
+    animation2.onPlay();
 
-    new Sprite('./src/images/sample_iconset.webp', [2, 8], {
-      offset: [87, 227, 86, 227],
-      initialFrame: 5,
-      targetClass: '.icon_6',
+    const animation3 = new Sprite('./src/images/sample_animation.jpg', [2, 4], {
+      initialFrame: 0,
+      frame: 12,
+      loop: true,
     });
+    animation3.create('.animtion_3', 0);
 
-    new Sprite('./src/images/sample_iconset.webp', [2, 8], {
-      offset: [87, 227, 86, 227],
-      initialFrame: 6,
-      targetClass: '.icon_7',
-    });
-
-    new Sprite('./src/images/sample_iconset.webp', [2, 8], {
-      offset: [87, 227, 86, 227],
-      initialFrame: 7,
-      targetClass: '.icon_8',
-    });
-
-    new Sprite('./src/images/sample_iconset.webp', [2, 8], {
-      offset: [87, 227, 86, 227],
-      initialFrame: 8,
-      targetClass: '.icon_9',
-    });
-
-    new Sprite('./src/images/sample_iconset.webp', [2, 8], {
-      offset: [87, 227, 86, 227],
-      initialFrame: 9,
-      targetClass: '.icon_10',
-    });
-
-    new Sprite('./src/images/sample_iconset.webp', [2, 8], {
-      offset: [87, 227, 86, 227],
-      initialFrame: 10,
-      targetClass: '.icon_11',
-    });
-
-    new Sprite('./src/images/sample_iconset.webp', [2, 8], {
-      offset: [87, 227, 86, 227],
-      initialFrame: 11,
-      targetClass: '.icon_12',
-    });
-
-    new Sprite('./src/images/sample_iconset.webp', [2, 8], {
-      offset: [87, 227, 86, 227],
-      initialFrame: 12,
-      targetClass: '.icon_13',
-    });
-
-    new Sprite('./src/images/sample_iconset.webp', [2, 8], {
-      offset: [87, 227, 86, 227],
-      initialFrame: 13,
-      targetClass: '.icon_14',
-    });
-
-    new Sprite('./src/images/sample_iconset.webp', [2, 8], {
-      offset: [87, 227, 86, 227],
-      initialFrame: 14,
-      targetClass: '.icon_15',
-    });
-
-    new Sprite('./src/images/sample_iconset.webp', [2, 8], {
-      offset: [87, 227, 86, 227],
-      initialFrame: 15,
-      targetClass: '.icon_16',
-    });
+    animation3.onClick();
   </script>
 </body>
 
